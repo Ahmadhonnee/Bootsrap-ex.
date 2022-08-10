@@ -1,0 +1,132 @@
+.section {
+    padding: 30px 0;
+    background: #004047;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mycard {
+    position: relative;
+    background: #012F34;
+    height: 220px;
+    transition: all .4s ease-in;
+    &:hover {
+        &::after {
+            transform: rotate(45deg);
+            background-color: #79C8C7;
+        }
+    }
+
+    &:hover {
+        &>.overlay {
+            // animation: overlay .4s linear .2s slidein;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .overlay {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        visibility: hidden;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        background: #002529;
+        transition: all .4s ease-in;
+        transition-delay: .4s;
+        &__icons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+    }
+    &::after {
+        content: "";
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -28px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: url(../../img/CombinedShape.svg) no-repeat #F67E7E;
+        background-position: center;
+        transition: all .4s ease-in;
+        transition-delay: .4s;
+    }
+
+    &__img {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        text-align: center;
+        color: #79C8C7;
+    }
+
+    &__desc {
+        font-size: 15px;
+        line-height: 25px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+}
+
+@keyframes overlay {
+    0% {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    15% {
+        top: 90%;
+        visibility: hidden;
+        opacity: .8;
+    }
+
+    30% {
+        top: 70%;
+        visibility: visible;
+        opacity: .6;
+    }
+
+    50% {
+        top: 50%;
+        visibility: visible;
+        opacity: .5;
+    }
+
+    70% {
+        top: 30%;
+        visibility: visible;
+        opacity: .4;
+    }
+
+    100% {
+        top: 0%;
+        visibility: visible;
+        opacity: 1;
+    }
+}
