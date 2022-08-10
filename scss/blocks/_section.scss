@@ -5,6 +5,10 @@
     overflow: hidden;
 }
 
+.mycards{
+    max-width: 1240px;
+    margin: auto;
+}
 .mycard {
     position: relative;
     background: #012F34;
@@ -30,6 +34,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 20px;
         position: absolute;
         top: 0;
         left: 0;
